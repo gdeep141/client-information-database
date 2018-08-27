@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= include head.html %>
+    <title>Proposals</title>
+</head>
+<body>
+    <%= include navbar.html %>
+
+    <div class="container">
+        <br><h1>Processes</h1><br>
+        <form action="">
+            <div class="form-group">
+                <label for="select-proposal">Select Proposal:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <select class="form-control" id="select-proposal"></select>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="target-fte-savings">Target FTE Savings:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <input type=text class="form-control" id="target-fte-savings" required>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="process-type">Process Type:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <select class="form-control" id="process-type">
+                            <option value="attended">Attended</option>
+                            <option value="unattended">Unattended</option>
+                        </select>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rpa-tool">RPA Tool:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <select class="form-control" id="rpa-tool">
+                            <option value="uipath">UiPath</option>
+                            <option value="blue-prism">Blue Prism</option>
+                            <option value="nice">Nice</option>
+                            <option value="automation-anywhere">Automation Anywhere</option>
+                            <option value="work-fusion">Work Fusion</option>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <button type=button class="btn" id="create-proposal-ref">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="target-start-date">Target Start Date:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <input type=date class="form-control" id="target-start-date" required>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="target-end-date">Target End Date:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <input type=date class="form-control" id="target-end-date" required>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="process-name">Process Name:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <input type=text class="form-control" id="process-name" required>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

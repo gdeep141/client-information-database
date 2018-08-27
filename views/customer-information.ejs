@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%= include head.html %>
+    <title>Customer Information Form</title>
+</head>
+<body>
+    <%= include navbar.html %>
+
+    <div class="container">
+        <br><h1>Customer Information</h1><br>
+        <form action="/add-customer-information" method=POST>
+            <div class="form-group">
+                <label for="department-information">Department Information:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <select class="form-control" id="department-information">
+                            <% for (let i = 0; i < depInfoList.length; i++) { %>
+                                <option value=<%= id=depInfoList[i].id %>>
+                                    <%= depInfoList[i].name %>
+                                </option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <div class="col-2">
+                        <button type=button class="btn" id="create-department-information">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sub-department">Sub-Department:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <select class="form-control" id="sub-department"></select>
+                    </div>
+                    <div class="col-2">
+                        <button type=button class="btn" id="create-sub-department">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="customer-name">Customer Name:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <select class="form-control" id="customer-name"></select>
+                    </div>
+                    <div class="col-2">
+                        <button type=button class="btn" id="create-customer-name">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <input type=email class="form-control" id="email" required>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telephone">Telephone:</label>
+                <div class="row">
+                    <div class="col-10">
+                        <input type=text class="form-control" id="telephone" required>
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="scan-date">Scan Date (optional):</label>
+                <div class="row">
+                    <div class="col-10">
+                        <input type=date class="form-control" id="date">
+                    </div>
+                    <div class="col-2"></div>
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary">
+        </form>
+        <br><br><br>
+    </div>
+</body>
+</html>
