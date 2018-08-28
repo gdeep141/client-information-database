@@ -2,26 +2,80 @@
 <html lang="en">
 <head>
     <%= include head.html %>
-    <title>Proposals</title>
+    <link rel="stylesheet" href="public\styles\monthly-update.css">
+    <title>Monthly Update</title>
 </head>
 <body>
     <%= include navbar.html %>
 
-    <div class="container">
+    <div class="my-container">
         <br><h1>Monthly Update</h1><br>
         <form action="">
             <div class="form-group">
-                <label for="proposal">Proposal:</label>
                 <div class="row">
-                    <div class="col-10">
+                    <div class="col-2">
+                        <label for="proposal">Proposal:</label>
+                    </div>
+                    <div class="col-8">
                         <select class="form-control" id="proposal"></select>
                     </div>
-                    <div class="col-2"></div>
+                    <div class="col-2">
+                        <input type="submit" value=Go class="btn btn-primary">
+                    </div>
                 </div>
             </div>
         </form>
 
-        <form action=""></form>
+        <div class="row col-12">
+            <label for="proposal-name">Proposal Name:</label>
+            <span id="proposal-name"></span>
+        </div>
+        <div class="row col-12">
+            <label for="proposal-type">Proposal Type:</label>
+            <span id="proposal-type"></span>
+        </div>
+
+        <br><br>
+
+        <form id="table-form" action="">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Process</th>
+                        <th>% Completed</th>
+                        <th>RAG</th>
+                        <th>Start Target</th>
+                        <th>Start Actual</th>
+                        <th>End Target</th>
+                        <th>End Actual</th>
+                        <th>Notes</th>
+                    </tr>    
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>[process name]</th>
+                        <td><input type="number" name="completed" required></td>
+                        <td>
+                            <select name="rag" id="">
+                                <option value="r">r</option>
+                                <option value="a">a</option>
+                                <option value="g">g</option>
+                            </select>
+                        </td>
+                        <td>dd/mm/yyyy</td>
+                        <td><input type="date" name="start" required></td>
+                        <td>dd/mm/yyyy</td>
+                        <td><input type="date" name="end" required></td>
+                        <td><textarea name="comment" cols="30" rows="5" required></textarea></td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <div class="form-group">
+                <label for="reporting-date">Reporting Date: </label>
+                <input type="date" name="reporting-date" required>
+            </div>
+        </form>
     </div>
 </body>
 </html>

@@ -1,0 +1,25 @@
+input[type=text],
+input[type=number] {
+    width: 90px;
+}
+
+input[type=date] {
+    width: 133px;
+}
+
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button,
+input[type=number]::-webkit-outer-spin-button, 
+input[type=number]::-webkit-inner-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.my-container {
+    width: 80%;
+    margin: 0px auto
+}
+
+select[name=rag] {
+    width: 80px;
+}
