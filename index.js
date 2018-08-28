@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, '.')));
 
-app.use(require('./routes'));
+app.use(require('./controllers'));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`listening on port ${port}...`));
