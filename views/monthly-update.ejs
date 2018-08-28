@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <%= include head.html %>
-    <link rel="stylesheet" href="public\styles\monthly-update.css">
+    <link rel="stylesheet" href="\styles\monthly-update.css">
     <title>Monthly Update</title>
 </head>
 <body>
@@ -10,7 +10,7 @@
 
     <div class="my-container">
         <br><h1>Monthly Update</h1><br>
-        <form action="">
+        <form action="/monthly-update/view">
             <div class="form-group">
                 <div class="row">
                     <div class="col-2">
@@ -25,7 +25,6 @@
                 </div>
             </div>
         </form>
-
         <div class="row col-12">
             <label for="proposal-name">Proposal Name:</label>
             <span id="proposal-name"></span>
@@ -54,28 +53,30 @@
                 <tbody>
                     <tr>
                         <th>[process name]</th>
-                        <td><input type="number" name="completed" required></td>
+                        <td><input type="number" class="form-control" name="completed" required></td>
                         <td>
-                            <select name="rag" id="">
+                            <select name="rag" class="form-control" id="">
                                 <option value="r">r</option>
                                 <option value="a">a</option>
                                 <option value="g">g</option>
                             </select>
                         </td>
                         <td>dd/mm/yyyy</td>
-                        <td><input type="date" name="start" required></td>
-                        <td>dd/mm/yyyy</td>
-                        <td><input type="date" name="end" required></td>
-                        <td><textarea name="comment" cols="30" rows="5" required></textarea></td>
+                        <td><input type="date" class="form-control" name="start" required></td>
+                        <td><span class="table-data">dd/mm/yyyy</span></td>
+                        <td><input type="date" class="form-control" name="end" required></td>
+                        <td><textarea name="comment" class="form-control" cols="30" rows="5" required></textarea></td>
                     </tr>
                 </tbody>
             </table>
             <hr>
             <div class="form-group">
                 <label for="reporting-date">Reporting Date: </label>
-                <input type="date" name="reporting-date" required>
+                <input type="date" class="form-control" name="reporting-date" required>
             </div>
         </form>
+
+        <input type="submit" class="btn btn-primary">
     </div>
 </body>
 </html>

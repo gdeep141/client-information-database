@@ -4,7 +4,8 @@ input[type=number] {
 }
 
 input[type=date] {
-    width: 133px;
+    width: 150px;
+    padding-left: 6px;
 }
 
 input[type=date]::-webkit-inner-spin-button, 
