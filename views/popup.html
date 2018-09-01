@@ -1,0 +1,49 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"></h5>
+          <button type="button" class="close exit" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><input type="text" id="new-value" class="form-control"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary save" style="float: left">Save</button>
+          <button type="button" class="exit btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<script>
+    var popup = {
+        showPopup: (title, callback) => {
+            // Show modal with empty input field 
+            $('#new-value').val('');
+            $('.modal-title').text(title);
+            $('.modal').show();
+
+            // Click save when 'Enter' key is pressed
+            $('#new-value').keydown((event) => {
+                if (event.keyCode == 13) {
+                    $('.save').click();
+                    return false;
+                }
+            });
+            
+            // Close modal and return value in input
+            $('.save').unbind('click');
+            $('.save').on('click', () => {
+                $('.modal').hide();
+                callback($('#new-value').val());
+            });
+        }
+    }
+
+    $('.exit').on('click',  () => {
+        $('.modal').hide();
+    });
+</script>

@@ -80,5 +80,32 @@
         </form>
         <br><br><br>
     </div>
+
+    <%= include popup.html %>
+
+    <script>
+        function addToDropDown(dropdownSelector, title) {
+            popup.showPopup(title, (newValue) => {
+                let v = newValue.split(' ').join('-');
+                $(dropdownSelector).append(
+                    `<option value=${v}>${newValue}</option>`
+                );
+                $(dropdownSelector).val(v);
+            });
+        };
+
+        $('#create-department-information').on('click', () => {
+            addToDropDown('#department-information', 'Enter new department');
+        });
+
+        $('#create-sub-department').on('click', () => {
+            addToDropDown('#sub-department', 'Enter new sub-department');
+        });
+
+        $('#create-customer-name').on('click', () => {
+            addToDropDown('#customer-name', 'Enter new customer name');
+        });
+
+    </script>
 </body>
 </html>
